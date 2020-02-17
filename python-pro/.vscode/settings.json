@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/var/www/html/hundred-days-code/python-pro/my_env/bin/python3",
+    "python.testing.pytestArgs": [
+        "my_env"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

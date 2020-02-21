@@ -1,0 +1,4 @@
+.pytest_cache
+.vscode
+my_env/*
+crud/instance/config.py

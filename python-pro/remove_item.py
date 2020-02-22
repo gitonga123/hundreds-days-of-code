@@ -24,12 +24,19 @@ def main():
         
 # Call the main function
 def demo_sort():
-    my_list = list(range(5, 109, 9)) + list(range(99, 1000, 100))
+    my_list = list(range(99, 1000, 100)) + list(range(5, 109, 9))
+    reverse_list =list( my_list)
     print('List before sort')
     print(my_list)
     print('List after sorting')
     my_list.sort()
     print(my_list)
+    print('Before reversing')
+    print(reverse_list)
+    reverse_list.reverse()
+    print('After reversing')
+    print(reverse_list)
+
 
 
 main()        

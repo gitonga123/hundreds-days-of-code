@@ -37,7 +37,5 @@ def demo_sort():
     print('After reversing')
     print(reverse_list)
 
-
-
 main()        
 demo_sort()

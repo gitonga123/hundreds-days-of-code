@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  debugPaintSizeEnabled=true;
-
   runApp(MyApp());
 }
 
@@ -80,19 +78,24 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-       child: Container(
-         decoration: BoxDecoration(border: Border.all()),
-         height: 200.0,
-         width: 200.0,
-         child: Icon(Icons.flag),
+        child: Container(
+          decoration: BoxDecoration(border: Border.all()),
+          height: 200.0,
+          width: 200.0,
+          // child: Icon(Icons.flag),
+          child: RaisedButton(
+            onPressed: () => print("On Pressed"),
+            child: Text("BUTTON"),
+            color: Colors.blue,
+          ),
 //         child: Text(
 //           'This is a text',
 //           style: TextStyle(
 //             color: Colors.red
 //           ),
 //         ),
-         // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
-       ),
+          // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

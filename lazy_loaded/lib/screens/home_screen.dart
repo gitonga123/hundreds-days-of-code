@@ -82,6 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
+        onTap: (int value) {
+          setState(() {
+            _currentTab = value;
+          });
+        },
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.search, size: 30.0), title: SizedBox.shrink()),

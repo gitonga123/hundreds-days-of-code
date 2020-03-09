@@ -76,31 +76,52 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+              height: 20.0,
+              width: 20.0,
+              color: Colors.red,
+            ),
+            Container(
+              height: 20.0,
+              width: 20.0,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 20.0,
+              width: 20.0,
+              color: Colors.yellow,
+            )
+          ],
+        ),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Container(
-          decoration: BoxDecoration(border: Border.all()),
-          height: 200.0,
-          width: 200.0,
-          child: Placeholder(),
-          // child: Icon(Icons.flag),
-//          child: RaisedButton(
-//            onPressed: () {
-//              Scaffold.of(context).showSnackBar(SnackBar (
-//                content: Text("HELLO!"),
-//              ));
-//            },
-//            child: Text("BUTTON"),
-//            color: Colors.blue,
-//          ),
-//         child: Text(
-//           'This is a text',
-//           style: TextStyle(
-//             color: Colors.red
-//           ),
-//         ),
-          // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
-        ),
+//        child: Container(
+//          decoration: BoxDecoration(border: Border.all()),
+//          height: 200.0,
+//          width: 200.0,
+//          child: Placeholder(),
+//          // child: Icon(Icons.flag),
+////          child: RaisedButton(
+////            onPressed: () {
+////              Scaffold.of(context).showSnackBar(SnackBar (
+////                content: Text("HELLO!"),
+////              ));
+////            },
+////            child: Text("BUTTON"),
+////            color: Colors.blue,
+////          ),
+////         child: Text(
+////           'This is a text',
+////           style: TextStyle(
+////             color: Colors.red
+////           ),
+////         ),
+//          // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
+//        ),
       ),
       // floatingActionButton: FloatingActionButton(
         // onPressed: _incrementCounter,

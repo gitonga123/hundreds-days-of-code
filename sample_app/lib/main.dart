@@ -84,12 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
          decoration: BoxDecoration(border: Border.all()),
          height: 200.0,
          width: 200.0,
-         child: Text(
-           'This is a text',
-           style: TextStyle(
-             color: Colors.red
-           ),
-         ),
+         child: Icon(Icons.flag),
+//         child: Text(
+//           'This is a text',
+//           style: TextStyle(
+//             color: Colors.red
+//           ),
+//         ),
          // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
        ),
       ),

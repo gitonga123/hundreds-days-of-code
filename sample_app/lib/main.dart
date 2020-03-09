@@ -82,12 +82,17 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(border: Border.all()),
           height: 200.0,
           width: 200.0,
+          child: Placeholder(),
           // child: Icon(Icons.flag),
-          child: RaisedButton(
-            onPressed: () => print("On Pressed"),
-            child: Text("BUTTON"),
-            color: Colors.blue,
-          ),
+//          child: RaisedButton(
+//            onPressed: () {
+//              Scaffold.of(context).showSnackBar(SnackBar (
+//                content: Text("HELLO!"),
+//              ));
+//            },
+//            child: Text("BUTTON"),
+//            color: Colors.blue,
+//          ),
 //         child: Text(
 //           'This is a text',
 //           style: TextStyle(
@@ -97,11 +102,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // child: Image.network("https://raw.githubusercontent.com/CaiJingLong/Flutter-FixImage/master/img/flutter-mark-square-100.png"),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+        // onPressed: _incrementCounter,
+        // tooltip: 'Increment',
+        // child: Icon(Icons.add),
+     // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

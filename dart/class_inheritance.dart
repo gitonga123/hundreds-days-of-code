@@ -1,15 +1,18 @@
-class Shape {
-  void cal_area() {
-    print("calling calc area defined n the shape class");
+class Parent {
+  void m1(int a) {
+    print("Value of a ${a}");
   }
 }
 
-class Circle extends Shape {
-
+class Child extends Parent {
+  @override
+  void m1(int b) {
+    print("Value of b ${b}");
+  }
 }
 
 void main() {
-  var obj = new Circle();
-  obj.cal_area();
+  Child c = new Child();
+  c.m1(12);
 }
 

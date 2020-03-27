@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -24,3 +25,28 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        color: Colors.deepPurple,
+        child: Text(
+          "Flight",
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            decoration: TextDecoration.none,
+            fontSize: 70.0,
+            fontFamily: "LiuJianMaoCao",
+            fontWeight: FontWeight.w300,
+            fontStyle: FontStyle.italic,
+            color: Colors.white
+          ),
+        ),
+      ),
+    );
+  }
+}
+

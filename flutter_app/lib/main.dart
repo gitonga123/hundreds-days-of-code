@@ -7,14 +7,9 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My Futter App",
+      title: "Exploring Flutter UI Widgets",
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: new AppBar(
-          title: Text("My First App screen"),
-        ),
-        body: new FirstScreen()
-      )
+      home: Home()
     );
   }
 }

@@ -31,22 +31,77 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        padding: const EdgeInsets.only(top: 35.0),
         alignment: Alignment.center,
         color: Colors.deepPurple,
-        child: Text(
-          "Flight",
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            decoration: TextDecoration.none,
-            fontSize: 70.0,
-            fontFamily: "LiuJianMaoCao",
-            fontWeight: FontWeight.w300,
-            fontStyle: FontStyle.italic,
-            color: Colors.white
-          ),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    "Jambo Jet: ",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 35.0,
+                      fontFamily: "Raleway",
+                      fontWeight: FontWeight.w300,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    " from Nairobi to Mombasa",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40.0,
+                      fontFamily: "LiuJianMaoCao",
+                      fontWeight: FontWeight.w300,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    "Fly 540: ",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 35.0,
+                        fontFamily: "Raleway",
+                        fontWeight: FontWeight.w300,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    " from Nairobi to Kisumu",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 50.0,
+                      fontFamily: "LiuJianMaoCao",
+                      fontWeight: FontWeight.w300,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
         ),
+
       ),
     );
   }
 }
+
 

@@ -93,15 +93,24 @@ class Home extends StatelessWidget {
                       decoration: TextDecoration.none,
                     ),
                   ),
-                )
+                ),
+                // assets
               ],
             ),
+            FlightImageAsset()
           ],
         ),
-
       ),
     );
   }
 }
 
+class FlightImageAsset extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage("assets/image/540_1.jpg");
+    Image image = Image(image: assetImage);
+    return Container(child: image);
+  }
+}
 

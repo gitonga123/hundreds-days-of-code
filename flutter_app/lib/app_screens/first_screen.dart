@@ -43,22 +43,23 @@ class Home extends StatelessWidget {
                     "Jambo Jet: ",
                     textDirection: TextDirection.ltr,
                     style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontSize: 35.0,
-                      fontFamily: "Raleway",
-                      fontWeight: FontWeight.w300,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.white
-                    ),
+                        decoration: TextDecoration.none,
+                        fontSize: 35.0,
+                        fontFamily: "Raleway",
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white),
                   ),
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 Expanded(
                   child: Text(
                     " from Nairobi to Mombasa",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 40.0,
-                      fontFamily: "LiuJianMaoCao",
+                      fontSize: 30.0,
+                      fontFamily: "Raleway",
                       fontWeight: FontWeight.w300,
                       decoration: TextDecoration.none,
                     ),
@@ -74,12 +75,11 @@ class Home extends StatelessWidget {
                     textDirection: TextDirection.ltr,
                     style: TextStyle(
                         decoration: TextDecoration.none,
-                        fontSize: 35.0,
+                        fontSize: 45.0,
                         fontFamily: "Raleway",
                         fontWeight: FontWeight.w300,
                         fontStyle: FontStyle.italic,
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                   ),
                 ),
                 Expanded(
@@ -87,8 +87,8 @@ class Home extends StatelessWidget {
                     " from Nairobi to Kisumu",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 50.0,
-                      fontFamily: "LiuJianMaoCao",
+                      fontSize: 30.0,
+                      fontFamily: "Raleway",
                       fontWeight: FontWeight.w300,
                       decoration: TextDecoration.none,
                     ),
@@ -97,7 +97,8 @@ class Home extends StatelessWidget {
                 // assets
               ],
             ),
-            FlightImageAsset()
+            FlightImageAsset(),
+            FlightBookButton()
           ],
         ),
       ),
@@ -114,3 +115,38 @@ class FlightImageAsset extends StatelessWidget {
   }
 }
 
+class FlightBookButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: new RaisedButton(
+        onPressed: () => bookFlight(context),
+        color: Colors.deepOrange,
+        child: Text(
+          "Book Your Flight",
+          style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white,
+              fontFamily: "Raleway",
+              fontWeight: FontWeight.w700),
+        ),
+        elevation: 6.0,
+      ),
+    );
+  }
+
+  void bookFlight(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: Text(
+        "Flight Book Successfully",
+      ),
+      content: Text("Have a pleasant Flight"),
+    );
+
+    showDialog(
+        context: context, builder: (BuildContext context) => alertDialog);
+  }
+}

@@ -14,6 +14,11 @@ class MyHome extends StatelessWidget {
             title: Text("Long List View"),
           ),
           body: getLongListView(),
+          floatingActionButton: new FloatingActionButton(
+            onPressed: () => print("float action bar clicked"),
+            child: Icon(Icons.add),
+            tooltip: "Add one more item",
+          ),
         ));
   }
 }
@@ -66,13 +71,22 @@ Widget getLongListView() {
         title: Text(items[index]),
         trailing: Icon(Icons.arrow_downward),
         onTap: () {
-          debugPrint(
-            "Item Number ${items[index]} was tapped"
-          );
+          showSnackBar(context, "Item Number ${items[index]} was tapped");
         },
       );
     },
   );
 
   return listView;
+}
+
+void showSnackBar(BuildContext context, String item) {
+  var snackBar = SnackBar(
+    content: Text(item),
+    action: SnackBarAction(
+      label: "UNDO",
+      onPressed: () => print("Performing dummy UNDO operation"),
+    ),
+  );
+  Scaffold.of(context).showSnackBar(snackBar);
 }

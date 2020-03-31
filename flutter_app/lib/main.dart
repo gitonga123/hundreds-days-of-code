@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/app_screens/first_screen.dart';
 
@@ -7,141 +8,122 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Exploring Flutter UI Widgets",
+        title: "Simple Interest Calculator App",
         debugShowCheckedModeBanner: false,
-        home: FavouriteCity());
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: SIForm());
   }
 }
 
-Widget getListView() {
-  var listView = ListView(
-    children: <Widget>[
-      ListTile(
-        leading: Icon(Icons.landscape),
-        title: Text("Landscape"),
-        subtitle: Text("Beautiful view !"),
-        trailing: Icon(Icons.wb_sunny),
-        onTap: () {
-          debugPrint("Landscape Tapped");
-        },
-      ),
-      ListTile(
-        leading: Icon(Icons.laptop_chromebook),
-        title: Text("Windows"),
-        subtitle: Text("My Computers"),
-        trailing: Icon(Icons.computer),
-      ),
-      ListTile(
-        leading: Icon(Icons.phone),
-        title: Text("Phone"),
-      ),
-      Text("Yet another element in List"),
-      Container(
-        color: Colors.red,
-        height: 50.0,
-      )
-    ],
-  );
-  return listView;
-}
-
-List<String> getListElements() {
-  var items = List<String>.generate(1000, (counter) => "Item $counter");
-
-  return items;
-}
-
-Widget getLongListView() {
-  var items = getListElements();
-  var listView = ListView.builder(
-    itemCount: items.length,
-    itemBuilder: (BuildContext context, int index) {
-      return ListTile(
-        leading: Text((index + 1).toString()),
-        title: Text(items[index]),
-        trailing: Icon(Icons.arrow_downward),
-        onTap: () {
-          showSnackBar(context, "Item Number ${items[index]} was tapped");
-        },
-      );
-    },
-  );
-
-  return listView;
-}
-
-void showSnackBar(BuildContext context, String item) {
-  var snackBar = SnackBar(
-    content: Text(item),
-    action: SnackBarAction(
-      label: "UNDO",
-      onPressed: () => print("Performing dummy UNDO operation"),
-    ),
-  );
-  Scaffold.of(context).showSnackBar(snackBar);
-}
-
-class FavouriteCity extends StatefulWidget {
+class SIForm extends StatefulWidget {
   @override
-  _FavouriteCityState createState() => _FavouriteCityState();
+  _SIFormState createState() => _SIFormState();
 }
 
-class _FavouriteCityState extends State<FavouriteCity> {
-  String nameCity = "";
-  var _currencies = [
-    'Kenyan Shillings',
-    'Ugandan Shillings',
-    'Tanzanian Shillings',
-    'Rwandese Franc',
-    'Burundian Franc'
-  ];
-  var _currencySelected = 'Kenyan Shillings';
+class _SIFormState extends State<SIForm> {
+  var _currencies = ['KES', 'UGX', 'TZS', 'RWF', 'FBu'];
+  final _minimumPadding = 5.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stateful App Example"),
+        title: Text('Simple Interest Calculator'),
       ),
       body: Container(
-        margin: EdgeInsets.all(20.0),
-        child: Column(
+        margin: EdgeInsets.all(_minimumPadding * 2),
+        child: ListView(
           children: <Widget>[
-            TextField(
-              onChanged: (String userInput) {
-                setState(() {
-                  nameCity = userInput;
-                });
-              },
-            ),
-            DropdownButton<String>(
-              items: _currencies.map((String currencyItem) {
-                return DropdownMenuItem<String>(
-                  child: Text(currencyItem),
-                  value: currencyItem,
-                );
-              }).toList(),
-              onChanged: (String newCurrency) {
-                debugPrint(newCurrency);
-                _currencySelectedFunc(newCurrency);
-              },
-              value: _currencySelected,
-            ),
             Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Text(
-                "Your favourite city is $nameCity",
-                style: TextStyle(fontSize: 20.0),
-              ),
-            )
+              padding: const EdgeInsets.all(20.0),
+              child: Center(child: getImageAsset()),
+            ),
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  labelText: "Principal",
+                  hintText: "Enter Principal amount e.g 12000",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0))),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  labelText: "Rate of Interest",
+                  hintText: "In percent p/a",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0))),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                        labelText: "Term",
+                        hintText: "Time in years",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0))),
+                  ),
+                ),
+                Container(
+                  width: _minimumPadding * 5,
+                ),
+                Expanded(
+                    child: DropdownButton<String>(
+                  items: _currencies.map((String currencyList) {
+                    return DropdownMenuItem<String>(
+                      child: Text(currencyList),
+                      value: currencyList,
+                    );
+                  }).toList(),
+                  value: 'KES',
+                  onChanged: (String newValueSelected) {
+                    debugPrint(newValueSelected);
+                  },
+                ))
+              ],
+            ),
+            SizedBox(height: 10.0,),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: RaisedButton(
+                    child: Text("Calculate"),
+                    onPressed: () {
+                      print("Calculate");
+                    },
+                  ),
+                ),
+                SizedBox(width: 8.0,),
+                Expanded(
+                  child: RaisedButton(
+                    child: Text("Reset"),
+                    onPressed: () {
+                      print("Reset");
+                    },
+                  ),
+                )
+              ],
+            ),
+            // SizedBox(height: 10.0,),
           ],
         ),
       ),
     );
   }
 
-  void _currencySelectedFunc(String newCurrency) {
-    setState(() {
-      this._currencySelected = newCurrency;
-    });
+  Widget getImageAsset() {
+    String value = "assets/image/money.png";
+    AssetImage assetImage = AssetImage(value);
+    Image image = Image(image: assetImage, width: 125.0, height: 125.0);
+    return Container(
+      child: image,
+    );
   }
 }

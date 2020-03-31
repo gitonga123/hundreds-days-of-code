@@ -9,8 +9,7 @@ class MyHome extends StatelessWidget {
     return MaterialApp(
         title: "Exploring Flutter UI Widgets",
         debugShowCheckedModeBanner: false,
-        home: FavouriteCity()
-    );
+        home: FavouriteCity());
   }
 }
 
@@ -89,6 +88,14 @@ class FavouriteCity extends StatefulWidget {
 
 class _FavouriteCityState extends State<FavouriteCity> {
   String nameCity = "";
+  var _currencies = [
+    'Kenyan Shillings',
+    'Ugandan Shillings',
+    'Tanzanian Shillings',
+    'Rwandese Franc',
+    'Burundian Franc'
+  ];
+  var _currencySelected = 'Kenyan Shillings';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,6 +113,19 @@ class _FavouriteCityState extends State<FavouriteCity> {
                 });
               },
             ),
+            DropdownButton<String>(
+              items: _currencies.map((String currencyItem) {
+                return DropdownMenuItem<String>(
+                  child: Text(currencyItem),
+                  value: currencyItem,
+                );
+              }).toList(),
+              onChanged: (String newCurrency) {
+                debugPrint(newCurrency);
+                _currencySelectedFunc(newCurrency);
+              },
+              value: _currencySelected,
+            ),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: Text(
@@ -117,5 +137,11 @@ class _FavouriteCityState extends State<FavouriteCity> {
         ),
       ),
     );
+  }
+
+  void _currencySelectedFunc(String newCurrency) {
+    setState(() {
+      this._currencySelected = newCurrency;
+    });
   }
 }

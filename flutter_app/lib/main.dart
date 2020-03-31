@@ -9,17 +9,8 @@ class MyHome extends StatelessWidget {
     return MaterialApp(
         title: "Exploring Flutter UI Widgets",
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("Long List View"),
-          ),
-          body: getLongListView(),
-          floatingActionButton: new FloatingActionButton(
-            onPressed: () => print("float action bar clicked"),
-            child: Icon(Icons.add),
-            tooltip: "Add one more item",
-          ),
-        ));
+        home: FavouriteCity()
+    );
   }
 }
 
@@ -89,4 +80,42 @@ void showSnackBar(BuildContext context, String item) {
     ),
   );
   Scaffold.of(context).showSnackBar(snackBar);
+}
+
+class FavouriteCity extends StatefulWidget {
+  @override
+  _FavouriteCityState createState() => _FavouriteCityState();
+}
+
+class _FavouriteCityState extends State<FavouriteCity> {
+  String nameCity = "";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Stateful App Example"),
+      ),
+      body: Container(
+        margin: EdgeInsets.all(20.0),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              onChanged: (String userInput) {
+                setState(() {
+                  nameCity = userInput;
+                });
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Text(
+                "Your favourite city is $nameCity",
+                style: TextStyle(fontSize: 20.0),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }

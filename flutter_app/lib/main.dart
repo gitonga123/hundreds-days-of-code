@@ -24,6 +24,7 @@ class SIForm extends StatefulWidget {
 }
 
 class _SIFormState extends State<SIForm> {
+  var _formKey = GlobalKey<FormState>();
   var _currencies = ['KES', 'UGX', 'TZS', 'RWF', 'FBu'];
   final _minimumPadding = 5.0;
   var _currentItemSelected = '';
@@ -46,112 +47,158 @@ class _SIFormState extends State<SIForm> {
       appBar: AppBar(
         title: Text('Simple Interest Calculator'),
       ),
-      body: Container(
-        margin: EdgeInsets.all(_minimumPadding * 2),
-        child: ListView(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Center(child: getImageAsset()),
-            ),
-            TextField(
-              controller: principalController,
-              keyboardType: TextInputType.number,
-              style: textStyle,
-              decoration: InputDecoration(
-                  labelText: "Principal",
-                  labelStyle: textStyle,
-                  hintText: "Enter Principal amount e.g 12000",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0))),
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            TextField(
-              controller: roiController,
-              keyboardType: TextInputType.number,
-              style: textStyle,
-              decoration: InputDecoration(
-                  labelText: "Rate of Interest",
-                  hintText: "In percent p/a",
-                  labelStyle: textStyle,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0))),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: TextField(
-                    controller: termController,
-                    keyboardType: TextInputType.number,
-                    style: textStyle,
-                    decoration: InputDecoration(
-                        labelText: "Term",
-                        hintText: "Time in years",
-                        labelStyle: textStyle,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0))),
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ListView(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(child: getImageAsset()),
+              ),
+              TextFormField(
+                controller: principalController,
+                keyboardType: TextInputType.number,
+                validator: (String value) {
+                  if (value.isEmpty) {
+                    return "Please enter principal amount";
+                  }
+                  return "";
+                },
+                style: textStyle,
+                decoration: InputDecoration(
+                    labelText: "Principal",
+                    labelStyle: textStyle,
+                    hintText: "Enter Principal amount e.g 12000",
+                    errorStyle: TextStyle(
+                      color: Colors.yellowAccent,
+                      fontSize: 15.0
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              TextFormField(
+                controller: roiController,
+                keyboardType: TextInputType.number,
+                validator: (String value) {
+                  if (value.isEmpty) {
+                    return "Please Enter the ROI";
+                  }
+                  return "";
+                },
+                style: textStyle,
+                decoration: InputDecoration(
+                    labelText: "Rate of Interest",
+                    hintText: "In percent p/a",
+                    labelStyle: textStyle,
+                    errorStyle: TextStyle(
+                      color: Colors.yellowAccent,
+                      fontSize: 15.0
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: TextFormField(
+                      controller: termController,
+                      keyboardType: TextInputType.number,
+                      validator: (String value) {
+                        if (value.isEmpty) {
+                          return "Please Enter the term of interest rate";
+                        }
+                        return "";
+                      },
+                      style: textStyle,
+                      decoration: InputDecoration(
+                          labelText: "Term",
+                          hintText: "Time in years",
+                          labelStyle: textStyle,
+                          errorStyle: TextStyle(
+                            color: Colors.yellowAccent,
+                            fontSize: 15.0
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0))),
+                    ),
                   ),
-                ),
-                Container(
-                  width: _minimumPadding * 5,
-                ),
-                Expanded(
-                    child: DropdownButton<String>(
-                  items: _currencies.map((String currencyList) {
-                    return DropdownMenuItem<String>(
-                      child: Text(currencyList),
-                      value: currencyList,
-                    );
-                  }).toList(),
-                  value: _currentItemSelected,
-                  onChanged: (String newValueSelected) {
-                    _onDropDownItemSelected(newValueSelected);
-                  },
-                ))
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: RaisedButton(
-                    color: Theme.of(context).accentColor,
-                    textColor: Theme.of(context).primaryColorDark,
-                    child: Text("Calculate", textScaleFactor: 1.5,),
-                    onPressed: () {
-                      setState(() {
-                       this.displayResult =  _calculateTotalReturns();
-                      });
+                  Container(
+                    width: _minimumPadding * 5,
+                  ),
+                  Expanded(
+                      child: DropdownButton<String>(
+                    items: _currencies.map((String currencyList) {
+                      return DropdownMenuItem<String>(
+                        child: Text(currencyList),
+                        value: currencyList,
+                      );
+                    }).toList(),
+                    value: _currentItemSelected,
+                    onChanged: (String newValueSelected) {
+                      _onDropDownItemSelected(newValueSelected);
                     },
+                  ))
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).accentColor,
+                      textColor: Theme.of(context).primaryColorDark,
+                      child: Text(
+                        "Calculate",
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          if (_formKey.currentState.validate()) {
+                            this.displayResult = _calculateTotalReturns();
+                          }
+                        });
+                      },
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Expanded(
-                  child: RaisedButton(
-                    color: Theme.of(context).primaryColorDark,
-                    textColor: Theme.of(context).primaryColorLight,
-                    child: Text("Reset", textScaleFactor: 1.1,),
-                    onPressed: () {
-                      setState(() {
-                        _reset();
-                      });
-                    },
+                  SizedBox(
+                    width: 10.0,
                   ),
-                )
-              ],
-            ),
-            SizedBox(height: 8.0,),
-            Text(this.displayResult, style: textStyle,)
-          ],
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColorDark,
+                      textColor: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        "Reset",
+                        textScaleFactor: 1.1,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _reset();
+                        });
+                      },
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              Text(
+                this.displayResult,
+                style: textStyle,
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -179,7 +226,8 @@ class _SIFormState extends State<SIForm> {
 
     double totalAmountPayable = principal + (principal * roi * term) / 100;
 
-    String result = "After $term years, your investment will be worth $totalAmountPayable $_currentItemSelected";
+    String result =
+        "After $term years, your investment will be worth $totalAmountPayable $_currentItemSelected";
 
     return result;
   }
@@ -190,6 +238,5 @@ class _SIFormState extends State<SIForm> {
     termController.text = '';
     displayResult = '';
     _currentItemSelected = _currencies[0];
-
   }
 }

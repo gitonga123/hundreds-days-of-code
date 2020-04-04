@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noteapplication/screens/note_detail.dart';
 
 class NoteList extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class NoteList extends StatefulWidget {
 class _NoteListState extends State<NoteList> {
   @override
   Widget build(BuildContext context) {
+    String title = "New Note";
     return Scaffold(
       appBar: new AppBar(
         title: Text('Notes'),
@@ -16,6 +18,7 @@ class _NoteListState extends State<NoteList> {
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
           debugPrint("Floating Action Button");
+          navigateToDetail(title);
         },
         tooltip: "Add Note",
         // backgroundColor: Theme.of(context).primaryColor,
@@ -27,6 +30,7 @@ class _NoteListState extends State<NoteList> {
   ListView getNoteListView() {
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
     int count = 1;
+    String title = "Edit Note Details";
 
     return ListView.builder(
       itemCount: count,
@@ -50,10 +54,22 @@ class _NoteListState extends State<NoteList> {
             ),
             onTap: () {
               debugPrint("Dummy Item One");
+              navigateToDetail(title);
             },
           ),
         );
       },
+    );
+  }
+
+  void navigateToDetail(String title) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) {
+              return NoteDetail(title);
+            }
+        )
     );
   }
 }

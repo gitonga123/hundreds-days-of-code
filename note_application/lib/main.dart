@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.indigoAccent,
         primaryColor: Colors.indigo
       ),
-      home: NoteDetail(),
+      home: NoteList(),
     );
   }
 }

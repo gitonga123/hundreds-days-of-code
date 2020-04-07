@@ -1,6 +1,6 @@
 # ordercoffee
 
-Order coffee from coffee shops near you
+A new Flutter application.
 
 ## Getting Started
 

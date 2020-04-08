@@ -19,17 +19,12 @@ class _SignInState extends State<SignIn> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: RaisedButton(
-          child: Text("Sign In Anonymously"),
-          onPressed: () async {
-            dynamic result = await _auth.signInAnon();
-            if (result == null) {
-              print("Error Signing In");
-            } else {
-              print("Signed In");
-              print(result.uid);
-            }
-          },
+        child: Form(
+          child: Column(
+            children: <Widget>[
+
+            ],
+          ),
         ),
       ),
     );

@@ -16,16 +16,23 @@ class AuthService {
     );
   }
 
-
-
   Future signInAnon() async {
     try {
       AuthResult result = await _auth.signInAnonymously();
       FirebaseUser user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {
-      print("Error recorded:- ${e.toString()}");
+      print("Error recorded Sign In:- ${e.toString()}");
       return null;
+    }
+  }
+
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print("Error Recorded Sign out");
+      print(e.toString());
     }
   }
 }

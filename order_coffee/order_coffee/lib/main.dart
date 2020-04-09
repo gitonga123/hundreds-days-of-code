@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
-
-
-
+import 'package:ordercoffee/screens/row_column.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of our application.
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Continues',
-      theme: ThemeData(
-        primaryColor: Colors.blueGrey
-      ),
-      home: new Scaffold(
-        backgroundColor: Colors.blueGrey[900],
-        appBar: new AppBar(
-          title: Text("Flutter Continues"),
-        ),
-        body: Center(
-          child: Image(
-              image: AssetImage("assets/images/diamond.png")
-          ),
-        ),
-      ),
+      home: RowColumn(),
     );
+//    return MaterialApp(
+//      debugShowCheckedModeBanner: false,
+//      title: 'MICARD',
+//      theme:
+//          ThemeData(primaryColor: Colors.teal, accentColor: Colors.tealAccent),
+//      home: new Scaffold(
+//        backgroundColor: Colors.teal                                          ,
+//        appBar: new AppBar(
+//          title: Text("MI CARD"),
+//        ),
+//        body: Container(
+//
+//        ),
+//      ),
+//    );
   }
 }
-

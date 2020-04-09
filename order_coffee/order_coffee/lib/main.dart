@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/screens/row_column.dart';
+import 'package:ordercoffee/screens/Calender/calendar_home.dart';
+import 'package:ordercoffee/screens/business_card.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: RowColumn(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
+      home: CalendarHome(),
     );
 //    return MaterialApp(
 //      debugShowCheckedModeBanner: false,

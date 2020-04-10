@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/screens/Calender/calendar_home.dart';
-import 'package:ordercoffee/screens/business_card.dart';
+import 'package:ordercoffee/screens/dicee.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: CalendarHome(),
+      home: DicePage(),
     );
 //    return MaterialApp(
 //      debugShowCheckedModeBanner: false,

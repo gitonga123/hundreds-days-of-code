@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordercoffee/screens/dicee.dart';
+import 'package:ordercoffee/screens/top_ten_widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: DicePage(),
+      home: Scaffold(
+        body: TopTenWidgets(),
+      ),
     );
 //    return MaterialApp(
 //      debugShowCheckedModeBanner: false,

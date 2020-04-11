@@ -12,9 +12,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.red
       ),
       home: Scaffold(
+        appBar: new AppBar(
+          title: Text("Wrap Widget"),
+        ),
         body: TopTenWidgets(),
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TopTenWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return WrapWidget();
+    return RichTextWidget();
   }
 }
 
@@ -92,4 +92,34 @@ class WrapWidget extends StatelessWidget {
     );
   }
 }
+
+class RichTextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      // child: Text("Rich Text", style: TextStyle(fontSize: 50),),
+      child: RichText(
+          text: TextSpan(
+              text: "RICH",
+            style: TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue
+            ),
+            children: [
+              TextSpan(
+                text: "TEXT",
+                style: TextStyle(
+                  fontSize: 50,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.red
+                )
+              )
+            ]
+          ),
+      ),
+    );
+  }
+}
+
 

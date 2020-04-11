@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: new AppBar(
-          title: Text("Wrap Widget"),
+          title: Text("Rich Text Widget"),
         ),
         body: TopTenWidgets(),
       ),

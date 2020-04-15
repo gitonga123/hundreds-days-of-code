@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/screens/dicee.dart';
-import 'package:ordercoffee/screens/top_ten_widgets.dart';
+// import 'package:ordercoffee/screens/dicee.dart';
+import 'package:ordercoffee/screens/magic_ball.dart';
+// import 'package:ordercoffee/screens/top_ten_widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,29 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red
+        backgroundColor: Colors.blue.shade900
       ),
       home: Scaffold(
+        backgroundColor: Colors.blue,
         appBar: new AppBar(
-          title: Text("Rich Text Widget"),
+          title: Text("Ask Me Anything"),
         ),
-        body: TopTenWidgets(),
+        body: BallPage(),
       ),
     );
-//    return MaterialApp(
-//      debugShowCheckedModeBanner: false,
-//      title: 'MICARD',
-//      theme:
-//          ThemeData(primaryColor: Colors.teal, accentColor: Colors.tealAccent),
-//      home: new Scaffold(
-//        backgroundColor: Colors.teal                                          ,
-//        appBar: new AppBar(
-//          title: Text("MI CARD"),
-//        ),
-//        body: Container(
-//
-//        ),
-//      ),
-//    );
   }
 }

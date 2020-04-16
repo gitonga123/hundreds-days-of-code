@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501323271925",
+    "firebase_url": "https://order-coffee-ab47e.firebaseio.com",
+    "project_id": "order-coffee-ab47e",
+    "storage_bucket": "order-coffee-ab47e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501323271925:android:d513511c01f01977b8bfbc",
+        "android_client_info": {
+          "package_name": "com.ordercoffeeshop.ordercoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501323271925-f7bnlqqq8l0vg3fq69jtv49bqsbiesjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVwAF_LyJAYArsY-98QgFvyjtnp8JYbYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501323271925-f7bnlqqq8l0vg3fq69jtv49bqsbiesjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ordercoffee/screens/quiz_app.dart';
 // import 'package:ordercoffee/screens/dicee.dart';
-import 'package:ordercoffee/screens/magic_ball.dart';
+// import 'package:ordercoffee/screens/magic_ball.dart';
+import 'package:ordercoffee/screens/xylophone.dart';
 // import 'package:ordercoffee/screens/top_ten_widgets.dart';
 
 void main() => runApp(MyApp());
@@ -13,14 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Colors.blue.shade900
+        backgroundColor: Colors.black54
       ),
       home: Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: new AppBar(
-          title: Text("Ask Me Anything"),
-        ),
-        body: BallPage(),
+        backgroundColor: Colors.grey.shade900,
+//        appBar: new AppBar(
+//          title: Text("Ask Me Anything"),
+//        ),
+        body: QuizApp(),
       ),
     );
   }

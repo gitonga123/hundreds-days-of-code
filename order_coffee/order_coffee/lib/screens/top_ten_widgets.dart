@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopTenWidgets extends StatelessWidget {
@@ -159,5 +160,43 @@ class ClipRRectWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class MediaQueryWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Orientation orientation = MediaQuery.of(context).orientation;
+
+    return Scaffold(
+      appBar: new AppBar(
+        title: Text('Media Query Widget'),
+      ),
+      body: Container(
+        child: (orientation == Orientation.portrait)
+            ? Column(
+                children: getLayoutElement(),
+              )
+            : Row(
+                children: getLayoutElement(),
+              ),
+      ),
+    );
+  }
+
+  List getLayoutElement() {
+    List<Widget> layoutElement = [
+      Flexible(
+          flex: 5,
+          child: Container(
+            color: Colors.blue,
+          )),
+      Flexible(
+          flex: 5,
+          child: Container(
+            color: Colors.green,
+          ))
+    ];
+    return layoutElement;
   }
 }

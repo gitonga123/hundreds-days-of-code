@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Colors.red,
 //        appBar: new AppBar(
 //          title: Text("Ask Me Anything"),
 //        ),
-        body: ClipRRectWidget(),
+        body: MediaQueryWidget(),
       ),
     );
   }

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 //        appBar: new AppBar(
 //          title: Text("Ask Me Anything"),
 //        ),
-        body: MediaQueryWidget(),
+        body: FlexibleWidget(),
       ),
     );
   }

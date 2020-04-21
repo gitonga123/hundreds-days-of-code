@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -200,3 +202,42 @@ class MediaQueryWidget extends StatelessWidget {
     return layoutElement;
   }
 }
+
+class FlexibleWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flexible Widget'),
+        backgroundColor: Colors.red,
+      ),
+      body: Column(
+        children: getLayoutElement(),
+      ),
+    );
+  }
+
+  List getLayoutElement() {
+    List<Widget> layoutElement = [
+      Flexible(
+          flex: 5,
+          child: Container(
+            color: Colors.blue,
+          )),
+      Flexible(
+          flex: 1,
+          child: Container(
+            color: Colors.green,
+          ),
+      ),
+      Flexible(
+          flex: 1,
+          child: Container(
+            color: Colors.red,
+          ),
+      ),
+    ];
+    return layoutElement;
+  }
+}
+

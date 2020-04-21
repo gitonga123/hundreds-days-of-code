@@ -149,8 +149,10 @@ class ClipRRectWidget extends StatelessWidget {
             padding: EdgeInsets.all(20.0),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              child: Image.asset(
-                "images/background.png",
+              child: Container(
+                width: 300.0,
+                height: 300.0,
+                color: Colors.blue,
               ),
             ),
           ),

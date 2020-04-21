@@ -241,3 +241,25 @@ class FlexibleWidget extends StatelessWidget {
   }
 }
 
+class SizedBoxWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sized Box Widget'),
+        backgroundColor: Colors.red,
+      ),
+      body: Container(
+        color: Colors.red,
+        child: Center(
+          child: SizedBox.expand(
+            child: RaisedButton(
+                onPressed: null,
+                child: Text('Raised Button'),
+            )
+          ),
+        )
+      )
+    );
+  }
+}

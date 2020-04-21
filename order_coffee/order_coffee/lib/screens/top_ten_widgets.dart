@@ -263,3 +263,33 @@ class SizedBoxWidget extends StatelessWidget {
     );
   }
 }
+
+class BackgroundImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Set a background image task'),
+        backgroundColor: Colors.red,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/background.png'),
+            fit: BoxFit.cover
+          ),
+        ),
+        child: Column(
+          children: <Widget>[
+                 Flexible(
+                   flex: 5,
+                     child: Text('Flexible 1', style: TextStyle(color: Colors.red),)
+                 )  ,
+          ],
+        ),
+      ),
+    );
+  }
+
+
+}

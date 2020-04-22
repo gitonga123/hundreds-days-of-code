@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ordercoffee/random_words.dart';
 // import 'package:ordercoffee/screens/quiz_app.dart';
 //import 'package:ordercoffee/screens/story_page.dart';
 // import 'package:ordercoffee/screens/dicee.dart';
 // import 'package:ordercoffee/screens/magic_ball.dart';
-import 'package:ordercoffee/screens/xylophone.dart';
-import 'package:ordercoffee/screens/top_ten_widgets.dart';
+//import 'package:ordercoffee/screens/xylophone.dart';
+//import 'package:ordercoffee/screens/top_ten_widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,14 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Startup Name Generator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       home: Scaffold(
         backgroundColor: Colors.red,
 //        appBar: new AppBar(
 //          title: Text("Ask Me Anything"),
 //        ),
-        body: BackgroundImage(),
+        body: RandomWords(),
       ),
     );
   }

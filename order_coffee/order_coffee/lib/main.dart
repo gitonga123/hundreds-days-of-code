@@ -17,14 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Startup Name Generator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      home: Scaffold(
-        backgroundColor: Colors.red,
-//        appBar: new AppBar(
-//          title: Text("Ask Me Anything"),
-//        ),
-        body: RandomWords(),
-      ),
+      theme: ThemeData(primaryColor: Colors.white),
+      home: RandomWords(),
     );
   }
 }

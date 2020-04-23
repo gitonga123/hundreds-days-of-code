@@ -55,6 +55,7 @@ class MyIdCard extends StatelessWidget {
                       FontAwesomeIcons.linkedinIn,
                     color: Colors.amberAccent[200],
                   ),
+                  iconSize: 16.0,
                   onPressed: () {},
                 ),
                 Icon(

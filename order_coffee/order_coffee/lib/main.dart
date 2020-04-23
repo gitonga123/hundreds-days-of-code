@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordercoffee/random_words.dart';
+import 'package:ordercoffee/screens/id_card.dart';
 // import 'package:ordercoffee/screens/quiz_app.dart';
 //import 'package:ordercoffee/screens/story_page.dart';
 // import 'package:ordercoffee/screens/dicee.dart';
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Startup Name Generator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.white),
-      home: RandomWords(),
+      theme: ThemeData(primaryColor: Colors.blue),
+      home: MyIdCard(),
     );
   }
 }

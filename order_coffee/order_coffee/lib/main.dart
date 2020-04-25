@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Forms in flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.teal),
-      home: MyCustomForm()
+      home: HomeMaterial()
     );
   }
 }

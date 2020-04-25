@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ordercoffee/forms/form_continue.dart';
 import 'package:ordercoffee/forms/form_screen.dart';
 
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Forms in flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.teal),
-      home: FormScreen()
+      home: MyCustomForm()
     );
   }
 }

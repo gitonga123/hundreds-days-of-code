@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/forms/form_continue.dart';
-import 'package:ordercoffee/forms/form_screen.dart';
-import 'package:ordercoffee/screens/login_screens.dart';
+import 'package:ordercoffee/Todo/home_page.dart';
+//import 'package:ordercoffee/forms/form_continue.dart';
+//import 'package:ordercoffee/forms/form_screen.dart';
+//import 'package:ordercoffee/screens/login_screens.dart';
 
 
 void main() => runApp(MyApp());
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Login UI',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen()
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage()
     );
   }
 }

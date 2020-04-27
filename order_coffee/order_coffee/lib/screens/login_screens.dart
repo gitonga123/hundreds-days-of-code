@@ -103,7 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.white,
                 ),
                 hintText: 'Enter your Email',
-                hintStyle: kHintTextStyle),
+                hintStyle: kHintTextStyle
+            ),
           ),
         )
       ],

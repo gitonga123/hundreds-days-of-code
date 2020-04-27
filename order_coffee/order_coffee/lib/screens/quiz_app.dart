@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:ordercoffee/models/quiz_brain.dart';
 
 class QuizApp extends StatelessWidget {
   @override
@@ -17,6 +19,11 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<Widget> scoreKeeper = [];
+  QuestionBrain quizBrain = QuestionBrain();
+
+  int questionNumber = 0;
+  @override
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,7 +36,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  'This is where the question will go.',
+                  quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
@@ -49,7 +56,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked true.
+                checkAnswer(true);
               },
             ),
           ),
@@ -67,12 +74,50 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked false.
+                checkAnswer(false);
               },
             ),
           ),
         ),
+        Row(
+          children: scoreKeeper,
+        )
       ],
     );
+  }
+
+  void checkAnswer(bool userPicked) {
+    if (quizBrain.getEndOfQuestion()) {
+      Alert(
+          context: context,
+          title: "QUIZ COMPLETE!",
+          desc: "You Got ${quizBrain.getNumberForCorrectQuestions()} / ${quizBrain.getTotalNumberOfQuestions()}")
+          .show();
+
+      setState(() {
+        quizBrain.resetQuestionNumber();
+        this.scoreKeeper = [];
+        quizBrain.resetNumberForCorrectQuestions();
+      });
+    } else {
+      setState(() {
+        if (quizBrain.getQuestionAnswer() == userPicked) {
+          scoreKeeper.add(
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
+          );
+          quizBrain.setNumberForCorrectQuestions();
+        } else {
+          scoreKeeper.add(Icon(
+            Icons.close,
+            color: Colors.red,
+          ));
+        }
+
+        quizBrain.nextQuestion();
+      });
+    }
   }
 }

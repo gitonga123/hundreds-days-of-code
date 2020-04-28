@@ -3,3 +3,12 @@ phonebook = {'Chris':'555−1111', 'Katie':'555−2222', 'Joanne':'555−3333'}
 
 # Retrieving a Value from a Dictionary
 print(phonebook['Chris'])
+
+# Using the in and not in Operators to Test
+# for a Value in a Dictionary
+if 'Katie' in phonebook:
+    print(phonebook['Katie'])
+
+# Adding Elements to an Existing Dictionary
+phonebook['James'] = "888-911"
+phonebook['Cate'] = "112-911"

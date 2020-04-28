@@ -20,4 +20,6 @@ if "James" in phonebook:
 if "Cate" in phonebook:
     del phonebook['Cate']
 
-print(phonebook)
+# Getting the Number of Elements in a Dictionary
+phonebook['Cate'] = "112-911"
+print(len(phonebook))

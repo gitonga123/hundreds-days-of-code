@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordercoffee/Todo/home_page.dart';
+import 'package:ordercoffee/widget_of_the_week/clip_oval.dart';
 //import 'package:ordercoffee/forms/form_continue.dart';
 //import 'package:ordercoffee/forms/form_screen.dart';
 //import 'package:ordercoffee/screens/login_screens.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage()
+      // home: MyHomePage()
+      home: ClipOvalWidget()
     );
   }
 }

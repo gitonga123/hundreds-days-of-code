@@ -41,3 +41,36 @@ print(test_scores["Vivian"]["English"])
 # Using the for Loop to Iterate over a Dictionary
 for key in test_scores:
     print(key, test_scores[key])
+
+# The clear Method
+dict_clear = {"first_name": "James", "last_name": "Silverstone"}
+dict_clear.clear()
+
+# The get Method
+print(phonebook.get("Silverstone", "Am not found"))
+print(phonebook.get("Cate", "Am not found"))
+
+# The items Method
+for key, value in phonebook.items():
+    print(key,value)
+
+# The keys Method
+print(phonebook.keys())
+
+# The pop Method
+pope_value = phonebook.pop('Cate', "Am not found")
+
+print(pope_value)
+
+# The popitem Method
+key, value = phonebook.popitem()
+print(key)
+print(value)
+
+# The values Method
+dict_values = phonebook.values()
+print(dict_values)
+
+# Check if variable is a dictionary
+is_dictionary = isinstance(phonebook, dict)
+print(is_dictionary)

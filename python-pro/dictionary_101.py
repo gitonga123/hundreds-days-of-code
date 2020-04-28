@@ -13,4 +13,11 @@ if 'Katie' in phonebook:
 phonebook['James'] = "888-911"
 phonebook['Cate'] = "112-911"
 
+# Deleting Elements
+if "James" in phonebook:
+    del phonebook['James']
+
+if "Cate" in phonebook:
+    del phonebook['Cate']
+
 print(phonebook)

@@ -45,3 +45,5 @@ print("Intersction")
 print(new_set_in)
 
 # Finding the Difference of Sets
+new_set_diff = new_set.difference(set3)
+print(new_set_diff)

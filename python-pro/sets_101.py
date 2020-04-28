@@ -24,4 +24,9 @@ for key in myset:
     print(key)
 
 # Using the in and not in Operators to Test
-for a Value in a Set
+if "c" in myset:
+    print("Am in the set")
+
+if "d" not in myset:
+    print("Am not in the set")
+    

@@ -12,3 +12,5 @@ if 'Katie' in phonebook:
 # Adding Elements to an Existing Dictionary
 phonebook['James'] = "888-911"
 phonebook['Cate'] = "112-911"
+
+print(phonebook)

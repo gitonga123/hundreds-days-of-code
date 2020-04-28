@@ -22,4 +22,22 @@ if "Cate" in phonebook:
 
 # Getting the Number of Elements in a Dictionary
 phonebook['Cate'] = "112-911"
-print(len(phonebook))
+
+# Mixing Data Types in a Dictionary
+test_scores = {
+    "James": [10, 15, 25, 30],
+    "Movering": [11, 18, 29, 30],
+    "Vivian": {
+        "Maths": 98,
+        "Physics": 89,
+        "English": 78,
+        "Kiswahili": 56
+    }
+}
+
+# Print Vivian test scores in English
+print(test_scores["Vivian"]["English"])
+
+# Using the for Loop to Iterate over a Dictionary
+for key in test_scores:
+    print(key, test_scores[key])

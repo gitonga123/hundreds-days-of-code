@@ -18,3 +18,10 @@ myset.remove(3)
 myset.remove("b")
 myset.discard("d")
 print(myset)
+
+# Using the for Loop to Iterate over a Set
+for key in myset:
+    print(key)
+
+# Using the in and not in Operators to Test
+for a Value in a Set

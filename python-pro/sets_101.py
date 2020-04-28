@@ -39,3 +39,9 @@ set2 = set([3, 4, 5, 6])
 
 set3 = set1.union(set2)
 
+# Finding the Intersection of Sets
+new_set_in = new_set.intersection(set3)
+print("Intersction")
+print(new_set_in)
+
+# Finding the Difference of Sets

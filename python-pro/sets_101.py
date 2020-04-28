@@ -7,7 +7,14 @@ print(myset_2)
 # Getting the Number of Elements in a Set
 print(len(myset_2))
 
-# 
+# Adding and Removing Elements
 myset.add(1)
 myset.add(3)
+print(myset)
+
+myset.update(myset_3)
+
+myset.remove(3)
+myset.remove("b")
+myset.discard("d")
 print(myset)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordercoffee/Todo/home_page.dart';
+import 'package:ordercoffee/unit_converter/convert_home.dart';
 import 'package:ordercoffee/widget_of_the_week/clip_oval.dart';
 //import 'package:ordercoffee/forms/form_continue.dart';
 //import 'package:ordercoffee/forms/form_screen.dart';
@@ -14,13 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Animated Widget - Widget of the week',
+      title: 'Measures Converter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       // home: MyHomePage()
-      home: AnimatedWidgetWow()
+      home: ConverterHome()
     );
   }
 }

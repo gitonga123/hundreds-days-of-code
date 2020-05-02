@@ -55,7 +55,7 @@ class _AnimatedWidgetState extends State<AnimatedWidgetWow> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: ButtonTransition()
+          child: Center(child: ButtonTransition())
       ),
     );
   }

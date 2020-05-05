@@ -12,7 +12,7 @@ class ClipOvalWidget extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(30.0),
       child: ClipOval(
-        clipper: MycustomCliper(),
+        clipper: MyCustomCliper(),
         child: Image.asset("assets/images/ball4.png"),
       ),
     )
@@ -20,7 +20,7 @@ class ClipOvalWidget extends StatelessWidget {
   }
 }
 
-class MycustomCliper extends CustomClipper<Rect> {
+class MyCustomCliper extends CustomClipper<Rect> {
   Rect getClip(Size size) {
     return Rect.fromLTWH(0, 0, 200, 100);
   }
@@ -28,3 +28,36 @@ class MycustomCliper extends CustomClipper<Rect> {
     return false;
   }
 }
+
+class ButtonTransition extends AnimatedWidget {
+  const ButtonTransition({width}) : super(listenable: width);
+
+  Animation<double> get width => listenable;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlineButton(
+      onPressed: () => print('Hello World'),
+      child: Text('Click Me!'),
+      borderSide: BorderSide(width: width.value),
+    );
+  }
+}
+
+class AnimatedWidgetWow extends StatefulWidget {
+  @override
+  _AnimatedWidgetState createState() => _AnimatedWidgetState();
+}
+
+class _AnimatedWidgetState extends State<AnimatedWidgetWow> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: Center(child: ButtonTransition())
+      ),
+    );
+  }
+}
+

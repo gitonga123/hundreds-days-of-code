@@ -1,4 +1,10 @@
 import math
+import numbers
+
+class CalculatorError(Exception):
+    """An Exception class for Calculator
+    """
+
 
 class Calculator:
 
@@ -7,6 +13,8 @@ class Calculator:
         self.__number_2 = number_2
     
     def add(self):
+        self._check_operand(self.__number_1)
+        self._check_operand(self.__number_2)
         return self.__number_1 + self.__number_2
     
     def subtract(self):
@@ -19,7 +27,16 @@ class Calculator:
         return self.__number_1 ** self.__number_2
     
     def division(self):
-        return self.__number_1/self.__number_2
+        self._check_operand(self.__number_1)
+        self._check_operand(self.__number_2)
+        try:
+            return self.__number_1/self.__number_2
+        except ZeroDivisionError:
+            raise CalculatorError("Zero Division Error")
     
     def multiply(self):
         return self.__number_1 * self.__number_2
+
+    def _check_operand(self, operand):
+        if not isinstance(operand, numbers.Number):
+            raise CalculatorError(f'"{operand}" is not a number')

@@ -1,7 +1,7 @@
-# Decorator is a design patter
+# Decorator is a design pattern
 # function that takes another function as a parameter
 # and extends its behavior without modifying it.
-# This is another good example of closure
+# this is another good example of closure
 
 
 def add_stars(some_function):

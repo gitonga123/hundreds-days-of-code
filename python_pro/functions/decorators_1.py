@@ -10,11 +10,12 @@ def add_stars(some_function):
         some_function()
         print("*******")
 
+    return wrapper()
 
+
+@add_stars
 def my_function():
     print("Hello!!!")
 
 
-my_function = add_stars(my_function)
-
-my_function()
+my_function

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/Todo/home_page.dart';
-import 'package:ordercoffee/productivity_timer/home_timer.dart';
-import 'package:ordercoffee/unit_converter/convert_home.dart';
-import 'package:ordercoffee/widget_of_the_week/clip_oval.dart';
-//import 'package:ordercoffee/forms/form_continue.dart';
-//import 'package:ordercoffee/forms/form_screen.dart';
-//import 'package:ordercoffee/screens/login_screens.dart';
+import 'package:ordercoffee/pong_game/main_page.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -16,13 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Work Timer',
+      title: 'Pong Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
       // home: MyHomePage()
-      home: ProductivityTimer()
+      home: PongMainPage()
     );
   }
 }

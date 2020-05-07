@@ -8,6 +8,14 @@ class Pong extends StatefulWidget {
 }
 
 class _PongState extends State<Pong> {
+  double width;
+  double height;
+  double posX = 0;
+  double posY = 0;
+  double batWidth = 0;
+  double batHeight = 0;
+  double batPosition = 0;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

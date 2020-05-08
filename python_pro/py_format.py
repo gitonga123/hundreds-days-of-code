@@ -37,3 +37,12 @@ print("{:.5}".format('elephant'))
 # Combining truncating and padding
 print("%-10.5s" % ('elephant'))
 print("{:^10.5}".format('elephant'))
+
+
+# Numbers
+# integers
+print("%d" % (42, ))
+print("{:d}".format(42))
+# floats
+print("%f" % (3.141592653589792))
+print("{:f}".format(3.141592653589792))

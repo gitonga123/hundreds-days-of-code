@@ -29,3 +29,11 @@ print('{:10}'.format('test'))
 
 print('{:_<10}'.format('test'))
 print('{:^10}'.format('test'))
+
+# Truncating long strings
+print("%.5s" % ('elephant'))
+print("{:.5}".format('elephant'))
+
+# Combining truncating and padding
+print("%-10.5s" % ('elephant'))
+print("{:^10.5}".format('elephant'))

@@ -13,7 +13,9 @@ class _MovieHomeState extends State<MovieHome> {
   HttpHelper helper;
   final String  iconBase = 'https://image.tmdb.org/t/p/w92/';
   final String defaultImage = 'https://images.freeimages.com/images/large-previews/5eb/movie-clapboard-1184339.jpg';
-  
+  Icon visibleIcon = Icon(Icons.search);
+  Widget searchBar = Text('Movies');
+
   @override
   void initState() {
     helper = HttpHelper();
@@ -29,6 +31,33 @@ class _MovieHomeState extends State<MovieHome> {
       appBar: AppBar(
         title: Text('Movies'),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: visibleIcon,
+            onPressed: () {
+              setState(() {
+                if (this.visibleIcon.icon == Icons.search) {
+                  this.visibleIcon = Icon(Icons.cancel);
+                  this.searchBar = TextField(
+                    textInputAction: TextInputAction.search,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                    onSubmitted: (String text) {
+                      search(text);
+                    },
+                  );
+                } else {
+                  setState(() {
+                    this.visibleIcon = Icon(Icons.search);
+                    this.searchBar = Text('Movies');
+                  });
+                }
+              });
+            },
+          )
+        ],
       ),
       body: SafeArea(
         child: Container(
@@ -75,6 +104,14 @@ class _MovieHomeState extends State<MovieHome> {
       moviesCount = movies.length;
       print(moviesCount);
       this.movies = movies;
+    });
+  }
+
+  Future search(text) async {
+    movies = await helper.findMovies(text);
+    setState(() {
+      moviesCount = movies.length;
+      movies = movies;
     });
   }
 }

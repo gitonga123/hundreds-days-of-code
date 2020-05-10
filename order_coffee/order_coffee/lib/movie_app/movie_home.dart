@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
+import 'http_helper.dart';
 
-class MovieHome extends StatelessWidget {
+class MovieHome extends StatefulWidget {
+  @override
+  _MovieHomeState createState() => _MovieHomeState();
+}
+
+class _MovieHomeState extends State<MovieHome> {
+  String result;
+  HttpHelper helper;
+  @override
+  void initState() {
+    helper = HttpHelper();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+    helper.getUpcoming().then(
+        (value) {
+          setState(() {
+            result = value;
+          });
+        }
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text('Movie App'),
@@ -10,7 +30,8 @@ class MovieHome extends StatelessWidget {
       ),
       body: SafeArea(
           child: Container(
-            color: Colors.white70,
+            color: Colors.grey[100],
+            child: Text(result),
           )
       ),
     );

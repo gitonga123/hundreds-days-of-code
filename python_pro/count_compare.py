@@ -6,13 +6,10 @@ def anagramSolution4(s1, s2):
         pos = ord(s1[i]) - ord('a')
         c1[pos] = c1[pos] + 1
     
-    print(c1)
-    
     for i in range(len(s2)):
         pos = ord(s2[i]) - ord('a')
         c2[pos] = c2[pos] + 1
-
-    print(c2)
+        
     j = 0
     stillOk = True
 

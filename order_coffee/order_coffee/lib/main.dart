@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/pong_game/main_page.dart';
+import 'package:ordercoffee/movie_app/movie_home.dart';
 
 
 
@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pong Demo',
+      title: 'My Movies',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       // home: MyHomePage()
-      home: PongMainPage()
+      home: MovieHome()
     );
   }
 }

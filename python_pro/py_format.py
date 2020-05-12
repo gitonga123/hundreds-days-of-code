@@ -46,3 +46,6 @@ print("{:d}".format(42))
 # floats
 print("%f" % (3.141592653589792))
 print("{:f}".format(3.141592653589792))
+
+width = (len("{0:b}".format(17)))
+print ("{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}".format(17, width=width))

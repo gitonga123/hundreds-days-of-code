@@ -13,8 +13,8 @@ nums2 = [2,5,6],       n = 3
 
 Output: [1,2,2,3,5,6]
 """
-nums1 = [1, 2, 3, 0, 0, 0]
-nums2 = [2, 5, 6]
+nums1 = [0]
+nums2 = [1]
 
 
 def merge(nums1, nums2, m, n):
@@ -25,10 +25,10 @@ def merge(nums1, nums2, m, n):
         else:
             nums1[m+n-1] = nums2[n-1]
             n -= 1
-        
+    
+    if n > 0:
+        nums1[:n] = nums2[:n]
 
 
-
-
-merge(nums1, nums2, 3, 3)
+merge(nums1, nums2, 0, 1)
 print(nums1)

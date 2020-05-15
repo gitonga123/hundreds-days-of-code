@@ -17,7 +17,8 @@ def sortedSquares(arr):
 
     return arr
 
-
+def sortedSquares_2(arr):
+    return sorted(x*x for x in arr)
 print(sortedSquares([-4, -1, 0, 3, 10]))
 
 

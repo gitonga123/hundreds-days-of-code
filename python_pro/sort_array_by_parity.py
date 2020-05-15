@@ -13,7 +13,7 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 
 def sortArrayByParity(arr):
     arr.sort(key = lambda x: x % 2)
-
     return arr
+
 
 print(sortArrayByParity([3, 1, 2, 4]))

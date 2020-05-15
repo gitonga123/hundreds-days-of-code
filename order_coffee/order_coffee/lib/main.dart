@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ordercoffee/movie_app/movie_home.dart';
+//import 'package:ordercoffee/movie_app/movie_home.dart';
+import 'package:ordercoffee/movie_app/new_movie_home.dart';
 
 
 
@@ -14,10 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'My Movies',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.indigo,
+        scaffoldBackgroundColor: Colors.white
       ),
       // home: MyHomePage()
-      home: MovieHome()
+      home: DashboardScreen()
     );
   }
 }

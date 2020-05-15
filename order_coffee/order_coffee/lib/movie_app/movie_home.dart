@@ -20,7 +20,6 @@ class _MovieHomeState extends State<MovieHome> {
   void initState() {
     helper = HttpHelper();
     initialize();
-    print(moviesCount);
     super.initState();
   }
 

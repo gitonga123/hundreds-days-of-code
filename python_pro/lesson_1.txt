@@ -1,0 +1,208 @@
+Recording my Journey through learning C# for an upcoming job opportunity that I think I have gotten am not so sure yet, but in case I need to have levelled up on C# programming and .Net Framework
+
+Am not an english native speaker but I should be able to express what I have learnt in simple and concise language.
+
+This is for my future self. if I read this 10 years later or so.
+
+Date 25th May 2020
+1. Today I learnt about Classes
+2. Inheritance
+3. Interfaces
+4. Abstract Classes
+5. Static Classes
+
+Expounding on each highlighted topic
+1. Classes
+a class is a like blue print - it defines the properties and methods for which an object can access.
+an object is an instance of a class, it access the content of a classes, to modify to update or use the properties and methods of that class.
+to create a class in C#, you use the key word class followed by the class name
+each class falls under a certain namespace
+namespace - behaves like directors, you can have more than class sharing a name but in different namespace.
+example
+namespace LessonsLearntToday
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+
+namespace DemonstrateNamespace
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+
+this is totally fine in C# and with a background in OOP in PHP I totally understand this concept.
+
+Example Class Books
+
+A class has properties and methods with have different access modifiers (internal, private, public, and protected in no particular order).
+
+Given I already have prior knowledge of this access modifiers I'll skip explaining them.
+
+a book can have the following properties
+a. title
+b. author
+c. ISBN
+d. Publish Date
+
+is the book class have used a short hand access modifiers. where you define the set and get methods, of which they both public
+
+to modify either to be private you can {get; private set;}
+
+class constructors don't have access modifiers, instead they share the same title with the class . e,g our constructor will be book
+overriding can also be done  - by having more than one constructor which share the same name,
+what differentiates them is the ability to have different number of parameters. 
+
+constructors are used to initialize the values of class properties.
+When a class have more properties sharing the same name and access modifiers but are differentiated by the number of parameters
+
+namespace BookStore
+{
+    class Book 
+    {
+        private string title;
+        private string author;
+        protected string ISBN;
+        protected decimal amountRaised;
+        public string publishDate {get; set;}
+
+        public Book(string title, string author, string ISBN, string publishDate)
+        {
+            title = title;
+            author = author;
+            ISBN = ISBN;
+        }
+
+        public Book()
+        {
+            Console.WriteLine("Default Classes constructor");
+        }
+
+        public string title
+        {
+            get 
+            {
+                return title
+            }
+
+            set
+            {
+                title = value.length > 0 ? title : "";
+            }
+        }
+
+        public string author
+        {
+            get {
+                return author;
+            }
+
+            set
+            {
+                author = value.length > 0 ? value : "";
+            }
+        }
+
+        public string ISBN
+        {
+            get 
+            {
+                return ISBN;
+            }
+
+            set
+            {
+                // maybe i could do pattern matching on this to check or something
+                ISBN = value.length > 0 ? value : "";
+            }
+        }
+
+        public override ToString()
+        {
+            return ("\nTitle = {0} \nAuthor = {1} \nISBN = {2}\nDate of Publish = {3}\nAmount Raised = {4}", title, author, ISBN, publishDate, amountRaised);
+        }
+
+        public virtual decimal amountRaised()
+        {
+            amountRaised = 0;
+        }
+    }
+}
+
+2. Inheritance
+
+you can use Inheritance to modify or access the values of a class, if only the access modifiers in the class are either protected or public.
+in our case we'll access ISBN in our child class
+
+assuming will are still under the same namespace.
+
+class TopSellers: Book
+{
+    // now we have access to the public and protected properties and methods of the book class
+
+    public decimal price {get; set;}
+    public int copiesSold{get; set;}
+
+    public TopSellers(decimal price, string title, string author, string ISBN, string publishDate) : base(title, author, ISBN, publishDate)
+    {
+        price = price;
+    }
+
+    public override decimal amountRaised()
+    {
+        amountRaised = price * copiesSold;
+    }
+}
+
+TopSellers topSeller = new TopSeller(135.4, "Across the bridge", "Charles Mwangi", "13737-91929-12", "15 MAY 2011");
+
+topSeller.amountRaised();
+Console.WriteLine(topSeller);
+
+to much information to digest at once, but I believe with practice I can only get better.
+
+you can override the parent function by having the override in the child class and the parent having a virtual property - Polymorphism(many forms)
+
+
+5. Static class - This are classes that can be accessed without initializing them or created an object for them
+Good example of a static classes commonly used is the
+Console.WriteLine();
+
+3. Abstract Classes - new thing have learnt today, a abstract is like a contract if you inherit from it you have to use its abstract methods,
+abstract class can not be instantiated but can only be inherited.
+Abstract class my have fields, properties and methods.
+
+These abstract methods do not have a body and MUST be implemented in the derived class.
+example - assumption you've a namespace;
+
+abstract class MyClass
+{
+    public void PrintAbstractMessage();
+}
+
+class ClassB: MyClass
+{
+    public void PrintAbstractMessage()
+    {
+        Console.WriteLine("inherited from the abstract class");
+    }
+}
+
+4 . Interfaces are similar to abstract in that they can only inherited and contains only methods without a body. They can not contain fields and properties, only methods. You can inherit (implement) from multiple Interfaces.
+We do not used the override keyword when implementing a interface method.
+
+Another thing that I had forgotten 
+GetType() and typeof()
+
+MyClass.GetType() == typeof(MyClass) == True
+    

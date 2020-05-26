@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ordercoffee/movie_app/movie_class.dart';
+import 'package:ordercoffee/movie_app/trailer_player.dart';
 
 class MovieDetailsUpgrade extends StatelessWidget {
   final Movie movie;
@@ -165,15 +166,22 @@ class MovieDetailsUpgrade extends StatelessWidget {
               onPressed: () {
                 debugPrint("Watch Trailer Clicked");
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Icon(Icons.play_circle_outline),
-                  Text(
-                    "Watch Trailer",
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                ],
+              child: GestureDetector(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Icon(Icons.play_circle_outline),
+                    Text(
+                      "Watch Trailer",
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                      builder: (_) => PlayerVideoAndPopPage());
+                  Navigator.push(context, route);
+                },
               ),
               color: Theme.of(context).primaryColor,
               textColor: Colors.white,

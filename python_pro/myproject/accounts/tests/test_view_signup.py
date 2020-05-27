@@ -1,8 +1,8 @@
 from django.test import TestCase
 from django.urls import resolve
 from django.core.urlresolvers import reverse
-from .views import signup
-from .forms import SignupForm
+from ..views import signup
+from ..forms import SignupForm
 from django.contrib.auth.models import User
 
 
@@ -62,7 +62,7 @@ class InvalidSignUpTests(TestCase):
         url = reverse('signup')
         self.response = self.client.post(url, {})
 
-    def test_sigunp_status_code(self):
+    def test_signup_status_code(self):
         """An invalid form submission should return to the same page
         """
         self.assertEquals(self.response.status_code, 200)

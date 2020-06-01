@@ -14,23 +14,19 @@ text-transform
 text-decoration
 **/
 /** CSS BOX MODEL */
-.buttons {
-  margin: 3rem;
+/* block: always starts a new line and takes full width */
+/* inline : Does not start and only take up as much as content space */
+body {
+  text-align: center;
 }
-a {
-  background: #689f3f;
-  text-decoration: none;
-  padding: 1.2rem 1.5rem;
-  color: #222;
-  text-transform: uppercase;
-  cursor: pointer;
+.block {
+  background: blue;
+  color: white;
+  width: 150px;
+  margin: 20px auto;
 }
-#one {
-  border: 0.2rem solid #222;
-  border-radius: 5%;
-  margin: 0 20px;
-}
-#two {
-  outline: 0.2em solid #222;
-  outline-offset: -10px;
+.inline {
+  background: red;
+  color: white;
+  display: block;
 }

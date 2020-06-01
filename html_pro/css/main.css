@@ -1,0 +1,21 @@
+/* 1em = 16px  default browser style */
+/* vh - height - percent of the screen
+vw - with - percent of the screen */
+/* cal() */
+
+* {
+  margin: 0;
+}
+
+.navbar {
+  background: blue;
+  height: 100px;
+  color: white;
+  font-size: 3rem;
+}
+
+.banner {
+  background: red;
+  min-height: calc(100vh - 100px);
+  color: black;
+}

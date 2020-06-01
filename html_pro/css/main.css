@@ -14,18 +14,23 @@ text-transform
 text-decoration
 **/
 /** CSS BOX MODEL */
-* {
-  margin: 0;
+.buttons {
+  margin: 3rem;
 }
-h1 {
-  background: red;
-  padding: 10px;
-  border: black solid 35px;
-  border-radius: 20px;
+a {
+  background: #689f3f;
+  text-decoration: none;
+  padding: 1.2rem 1.5rem;
+  color: #222;
+  text-transform: uppercase;
+  cursor: pointer;
 }
-p {
-  background: blue;
-  padding: 20px;
-  border: 13px solid green;
-  border-radius: 50%;
+#one {
+  border: 0.2rem solid #222;
+  border-radius: 5%;
+  margin: 0 20px;
+}
+#two {
+  outline: 0.2em solid #222;
+  outline-offset: -10px;
 }

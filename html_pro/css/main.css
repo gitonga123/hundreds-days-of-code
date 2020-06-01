@@ -13,32 +13,19 @@ word-spacing
 text-transform
 text-decoration
 **/
-a {
-  font-size: 40px;
-  text-decoration: none;
-}
-body {
-  text-transform: uppercase;
-  text-decoration: overline;
+/** CSS BOX MODEL */
+* {
+  margin: 0;
 }
 h1 {
-  text-transform: capitalize;
-  text-decoration: underline;
+  background: red;
+  padding: 10px;
+  border: black solid 35px;
+  border-radius: 20px;
 }
-h2 {
-  text-transform: lowercase;
-  text-decoration: wavy;
-}
-h3 {
-  text-decoration: solid;
-}
-
-.one {
-  line-height: 0.5em;
-}
-.two {
-  letter-spacing: 5px;
-}
-.three {
-  word-spacing: 20px;
+p {
+  background: blue;
+  padding: 20px;
+  border: 13px solid green;
+  border-radius: 50%;
 }

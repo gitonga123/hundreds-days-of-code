@@ -57,7 +57,7 @@ def topic_posts(request, pk, topic_pk):
 @login_required
 def reply_topic(request, pk, topic_pk):
     topic = get_object_or_404(Topic, board__pk=pk, pk=topic_pk)
-    if request.Method == 'POST':
+    if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
@@ -65,7 +65,7 @@ def reply_topic(request, pk, topic_pk):
             post.created_by = request.user
             post.save()
 
-            return redirect('topic_post', pk=pk, topic_pk=topic_pk)
+            return redirect('topic_posts', pk=pk, topic_pk=topic_pk)
     else:
         form = PostForm()
     return render(request, 'reply_topic.html', {'topic': topic, 'form': form})

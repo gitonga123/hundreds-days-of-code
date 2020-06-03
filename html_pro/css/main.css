@@ -16,17 +16,25 @@ text-decoration
 /** CSS BOX MODEL */
 /* block: always starts a new line and takes full width */
 /* inline : Does not start and only take up as much as content space */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.block {
-  background: blue;
-  color: white;
-  width: 150px;
-  margin: 20px auto;
+
+ul li {
+  list-style-type: none;
 }
-.inline {
-  background: red;
-  color: white;
+
+ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  background: #70a9a1;
+  color: #ffffff;
+  padding: 10px;
   display: block;
 }

@@ -16,18 +16,42 @@ text-decoration
 /** CSS BOX MODEL */
 /* block: always starts a new line and takes full width */
 /* inline : Does not start and only take up as much as content space */
-
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
 div {
-  background: blueviolet;
-  margin: 10px;
-  color: whitesmoke;
+  min-height: 100vh;
+  color: green;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.none {
-  display: none;
+.big-img {
+  background: url("../img/colors_1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
 }
-.opacity {
-  opacity: 1;
+
+.small-img {
+  background: url("../img/pink_1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-repeat: space;
+  background-repeat: round; */
 }
-.opacity {
-  opacity: 1;
+.folder-img {
+  background: url("../img/city_1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }

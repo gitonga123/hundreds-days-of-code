@@ -1,0 +1,43 @@
+Continue recording my learning journey in learning C#
+I hope this job will come through cause I have suspended other active
+projects / goals which I don't think its a good idea
+
+Also today I got a chance to brush through python django unit tests and user authentication reason being was involved in a django project that I was not interested in but cause was readily available my friend recommended me to do it, So there some tasks are coming up and I need to go through python to re-dust
+
+so lets start with C#
+
+I did enum and structure types (struct type)
+enum = is a special data type that allows programmers to provide names for a set of integral integers
+By default each enum value is a assigned an integer value, starting from zero.
+Bytes data type holds value that ranges between 0 to 255
+
+examples:
+enum DaysOfWeek
+{
+    sun, mon, tue, wed, thur, fri, Sat
+}
+initialize the value
+DaysOfWeek myDays = DaysOfWeek.mon
+
+Console.WriteLine(myDay) // mon
+
+enum DaysOfWeekTwo
+{
+    Sun = 5, Mon = 10, Tues, Wed, Thurs, Fri, Sat
+}
+
+the integer values for Tues = 11, 12, 13 going on
+
+You can also change the default type of enums to any other data type
+
+enum DaysOfWeekFour : byte
+{
+    sun = 10, mon, Tues, Wed, Thurs, Fri, Sat
+}
+
+struct - are similar to a class in many aspects, like classes, they contain elements like properties, constructors, methods and fields and allows you to group related members int a single package so that you can manipulate them as a group
+Struct does not support inheritance, but it can implement an interface
+
+Struct are value types while classes are value types and classes are reference types
+
+

@@ -1,0 +1,32 @@
+/* 1em = 16px  default browser style */
+/* vh - height - percent of the screen
+vw - with - percent of the screen */
+/* cal() */
+/*
+font-size font-family font-stack generic-family
+Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif
+*/
+/*
+line-height
+letter-spacing
+word-spacing
+text-transform
+text-decoration
+**/
+/** CSS BOX MODEL */
+/* block: always starts a new line and takes full width */
+/* inline : Does not start and only take up as much as content space */
+body {
+  text-align: center;
+}
+.block {
+  background: blue;
+  color: white;
+  width: 150px;
+  margin: 20px auto;
+}
+.inline {
+  background: red;
+  color: white;
+  display: block;
+}

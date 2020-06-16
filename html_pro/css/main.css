@@ -16,7 +16,7 @@ text-decoration
 /** CSS BOX MODEL */
 /* block: always starts a new line and takes full width */
 /* inline : Does not start and only take up as much as content space */
-* {
+/* * {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
@@ -46,7 +46,7 @@ div {
   /* background-repeat: repeat-x;
   background-repeat: repeat-y;
   background-repeat: space;
-  background-repeat: round; */
+  background-repeat: round; 
 }
 .folder-img {
   background: url("../img/city_1.jpeg");
@@ -54,4 +54,33 @@ div {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+} */
+body {
+  background: #eee;
+}
+.wrapper {
+  width: 100%;
+  max-width: 980px;
+  margin:  0 auto;
+}
+
+.flex-container {
+  display: flex;
+  background: #fff;
+}
+.box {
+  height: 100px;
+  min-width: 100px;
+}
+
+.one {
+  background: red;
+}
+
+.two {
+  background: blue;
+}
+
+.three {
+  background: green;
 }

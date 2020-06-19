@@ -55,13 +55,12 @@ div {
   background-position: center;
   background-attachment: fixed;
 } */
+
 body {
   background: #eee;
 }
 .wrapper {
   width: 100%;
-  max-width: 980px;
-  margin:  0 auto;
 }
 
 .flex-container {
@@ -75,12 +74,15 @@ body {
 
 .one {
   background: red;
+  flex-grow: 2;
 }
 
 .two {
   background: blue;
+  flex-grow: 3;
 }
 
 .three {
   background: green;
+  flex-grow: 1;
 }

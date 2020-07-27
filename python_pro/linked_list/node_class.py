@@ -31,8 +31,10 @@ class LinkedList:
 
 
 
-# Linked List with a single node
+# Singly Linked List with insertion and print methods
 LL = LinkedList()
-LL.head = Node(3)
-print(LL.head.data)
+LL.insert(3)
+LL.insert(4)
+LL.insert(5)
+LL.printLL()
 
